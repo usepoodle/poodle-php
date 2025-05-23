@@ -1,0 +1,50 @@
+# Composer
+vendor/
+composer.lock
+
+# PHPUnit
+.phpunit.result.cache
+coverage/
+phpunit.xml
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cache and temporary files
+.cache/
+.tmp/
+.temp/
+
+# PHP CS Fixer
+.php-cs-fixer.cache
+.php_cs.cache
+
+# PHPStan
+.phpstan.neon
+phpstan.neon
+
+# Psalm
+psalm.xml
+.psalm/
+
+# Build artifacts
+build/
+dist/
+
+# Documentation builds
+docs/_build/
