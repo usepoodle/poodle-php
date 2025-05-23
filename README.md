@@ -61,7 +61,7 @@ echo "Email sent! Message: " . $response->getMessage();
 - ✅ PSR-12 compliant code
 - ✅ 100% type coverage with PHPDoc
 - ✅ Extensive test suite
-- ✅ PHP 7.4+ support
+- ✅ PHP 8.0+ support
 
 ## Configuration
 

@@ -28,7 +28,7 @@ class PoodleClient
      * @param string|Configuration $apiKeyOrConfig
      * @param string|null $baseUrl
      */
-    public function __construct($apiKeyOrConfig, ?string $baseUrl = null)
+    public function __construct(string|Configuration $apiKeyOrConfig, ?string $baseUrl = null)
     {
         if ($apiKeyOrConfig instanceof Configuration) {
             $this->config = $apiKeyOrConfig;
@@ -45,14 +45,10 @@ class PoodleClient
      * @param Email|array<string, mixed> $email
      * @return EmailResponse
      */
-    public function sendEmail($email): EmailResponse
+    public function sendEmail(Email|array $email): EmailResponse
     {
         if (is_array($email)) {
             $email = $this->createEmailFromArray($email);
-        }
-
-        if (! $email instanceof Email) {
-            throw new \InvalidArgumentException('Email must be an instance of Email or an array');
         }
 
         $response = $this->httpClient->post('v1/send-email', $email->toArray());

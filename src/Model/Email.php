@@ -12,44 +12,12 @@ use Poodle\Exception\ValidationException;
  */
 class Email
 {
-    /**
-     * @var string
-     */
-    private string $from;
-
-    /**
-     * @var string
-     */
-    private string $to;
-
-    /**
-     * @var string
-     */
-    private string $subject;
-
-    /**
-     * @var string|null
-     */
-    private ?string $html = null;
-
-    /**
-     * @var string|null
-     */
-    private ?string $text = null;
-
-    /**
-     * @param string $from
-     * @param string $to
-     * @param string $subject
-     * @param string|null $html
-     * @param string|null $text
-     */
     public function __construct(
-        string $from,
-        string $to,
-        string $subject,
-        ?string $html = null,
-        ?string $text = null
+        private string $from,
+        private string $to,
+        private string $subject,
+        private ?string $html = null,
+        private ?string $text = null
     ) {
         $this->setFrom($from);
         $this->setTo($to);

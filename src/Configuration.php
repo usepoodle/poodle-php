@@ -36,44 +36,13 @@ class Configuration
      */
     public const SDK_VERSION = '1.0.0';
 
-    /**
-     * @var string
-     */
     private string $apiKey;
-
-    /**
-     * @var string
-     */
     private string $baseUrl;
-
-    /**
-     * @var float
-     */
     private float $timeout;
-
-    /**
-     * @var float
-     */
     private float $connectTimeout;
-
-    /**
-     * @var bool
-     */
     private bool $debug;
-
-    /**
-     * @var array<string, mixed>
-     */
     private array $httpClientOptions;
 
-    /**
-     * @param string|null $apiKey
-     * @param string|null $baseUrl
-     * @param float|null $timeout
-     * @param float|null $connectTimeout
-     * @param bool $debug
-     * @param array<string, mixed> $httpClientOptions
-     */
     public function __construct(
         ?string $apiKey = null,
         ?string $baseUrl = null,
@@ -82,8 +51,8 @@ class Configuration
         bool $debug = false,
         array $httpClientOptions = []
     ) {
-        $this->apiKey = $apiKey ?? $this->getEnvironmentVariable('POODLE_API_KEY', '');
-        $this->baseUrl = $baseUrl ?? $this->getEnvironmentVariable('POODLE_BASE_URL', self::DEFAULT_BASE_URL);
+        $this->apiKey = $apiKey ?: $this->getEnvironmentVariable('POODLE_API_KEY', '');
+        $this->baseUrl = $baseUrl ?: $this->getEnvironmentVariable('POODLE_BASE_URL', self::DEFAULT_BASE_URL);
         $this->timeout = $timeout ?? (float) $this->getEnvironmentVariable('POODLE_TIMEOUT', (string) self::DEFAULT_TIMEOUT);
         $this->connectTimeout = $connectTimeout ?? (float) $this->getEnvironmentVariable('POODLE_CONNECT_TIMEOUT', (string) self::DEFAULT_CONNECT_TIMEOUT);
         $this->debug = $debug || (bool) $this->getEnvironmentVariable('POODLE_DEBUG', '0');

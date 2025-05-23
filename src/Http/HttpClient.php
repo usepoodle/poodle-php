@@ -21,22 +21,10 @@ use Psr\Http\Message\ResponseInterface;
  */
 class HttpClient
 {
-    /**
-     * @var GuzzleClient
-     */
     private GuzzleClient $client;
 
-    /**
-     * @var Configuration
-     */
-    private Configuration $config;
-
-    /**
-     * @param Configuration $config
-     */
-    public function __construct(Configuration $config)
+    public function __construct(private Configuration $config)
     {
-        $this->config = $config;
         $this->client = $this->createGuzzleClient();
     }
 
@@ -185,15 +173,15 @@ class HttpClient
     {
         $message = $e->getMessage();
 
-        if (strpos($message, 'cURL error 28') !== false || strpos($message, 'timeout') !== false) {
+        if (str_contains($message, 'cURL error 28') || str_contains($message, 'timeout')) {
             return NetworkException::connectionTimeout($this->config->getTimeout());
         }
 
-        if (strpos($message, 'SSL') !== false || strpos($message, 'certificate') !== false) {
+        if (str_contains($message, 'SSL') || str_contains($message, 'certificate')) {
             return NetworkException::sslError($message);
         }
 
-        if (strpos($message, 'resolve') !== false || strpos($message, 'DNS') !== false) {
+        if (str_contains($message, 'resolve') || str_contains($message, 'DNS')) {
             $host = parse_url($this->config->getBaseUrl(), PHP_URL_HOST);
             if ($host === false || $host === null) {
                 $host = 'unknown';

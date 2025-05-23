@@ -9,23 +9,31 @@ namespace Poodle\Model;
  */
 class EmailResponse
 {
-    /**
-     * @var bool
-     */
     private bool $success;
-
-    /**
-     * @var string
-     */
     private string $message;
 
+    public function __construct(bool|array $success = false, string $message = '')
+    {
+        if (is_array($success)) {
+            // Old array-based constructor
+            $data = $success;
+            $this->success = $data['success'] ?? false;
+            $this->message = $data['message'] ?? '';
+        } else {
+            // New individual parameter constructor
+            $this->success = $success;
+            $this->message = $message;
+        }
+    }
+
     /**
+     * Create from array data
+     *
      * @param array<string, mixed> $data
      */
-    public function __construct(array $data)
+    public static function fromArray(array $data): self
     {
-        $this->success = $data['success'] ?? false;
-        $this->message = $data['message'] ?? '';
+        return new self($data['success'] ?? false, $data['message'] ?? '');
     }
 
     /**
