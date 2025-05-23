@@ -1,0 +1,37 @@
+name: Manual Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to publish"
+        required: true
+        default: "1.0.0"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: Manual Publish to Packagist
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: json, mbstring
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-dev
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Trigger Packagist Update
+        run: |
+          curl -XPOST -H'content-type:application/json' \
+            'https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}' \
+            -d'{"repository":{"url":"https://github.com/${{ github.repository }}"}}'
