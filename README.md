@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/packagist/v/usepoodle/poodle-php.svg)](https://packagist.org/packages/usepoodle/poodle-php)
 [![Build Status](https://github.com/usepoodle/poodle-php/workflows/CI/badge.svg)](https://github.com/usepoodle/poodle-php/actions)
-[![License](https://img.shields.io/packagist/l/usepoodle/poodle-php.svg)](https://packagist.org/packages/usepoodle/poodle-php)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 PHP SDK for the Poodle's email sending API.
 
