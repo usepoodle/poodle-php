@@ -12,4 +12,20 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+
+    <issueHandlers>
+        <!-- Suppress unused method warnings for library/SDK public APIs -->
+        <PossiblyUnusedMethod>
+            <errorLevel type="suppress">
+                <directory name="src" />
+            </errorLevel>
+        </PossiblyUnusedMethod>
+
+        <!-- Suppress unused class warnings for library/SDK public APIs -->
+        <UnusedClass>
+            <errorLevel type="suppress">
+                <directory name="src" />
+            </errorLevel>
+        </UnusedClass>
+    </issueHandlers>
 </psalm>
