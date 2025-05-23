@@ -19,7 +19,7 @@
     }
   ],
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.1",
     "guzzlehttp/guzzle": "^7.0",
     "ext-json": "*"
   },
@@ -27,7 +27,7 @@
     "phpunit/phpunit": "^9.5",
     "friendsofphp/php-cs-fixer": "^3.0",
     "phpstan/phpstan": "^1.0",
-    "vimeo/psalm": "^5.0",
+    "vimeo/psalm": "^6.0",
     "squizlabs/php_codesniffer": "^3.6"
   },
   "autoload": {
