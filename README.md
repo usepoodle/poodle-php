@@ -54,14 +54,14 @@ echo "Email sent! Message: " . $response->getMessage();
 
 ## Features
 
-- ✅ Simple and intuitive API
-- ✅ HTML and plain text email support
-- ✅ Comprehensive error handling
-- ✅ Built-in input validation
-- ✅ PSR-12 compliant code
-- ✅ 100% type coverage with PHPDoc
-- ✅ Extensive test suite
-- ✅ PHP 8.0+ support
+- Simple and intuitive API
+- HTML and plain text email support
+- Comprehensive error handling
+- Built-in input validation
+- PSR-12 compliant code
+- 100% type coverage with PHPDoc
+- Extensive test suite
+- PHP 8.0+ support
 
 ## Configuration
 
