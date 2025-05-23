@@ -29,16 +29,16 @@ Thumbs.db
 .cache/
 .tmp/
 .temp/
+var/
 
 # PHP CS Fixer
 .php-cs-fixer.cache
 .php_cs.cache
 
-# PHPStan
-.phpstan.neon
+# PHPStan (ignore local config, but keep .dist files)
 phpstan.neon
 
-# Psalm
+# Psalm (ignore local config, but keep .dist files)
 psalm.xml
 .psalm/
 
