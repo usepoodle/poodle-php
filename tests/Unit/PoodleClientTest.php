@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Poodle\Tests\Unit;
 
-use Poodle\PoodleClient;
 use Poodle\Model\Email;
-use Poodle\Model\EmailResponse;
+use Poodle\PoodleClient;
 use Poodle\Tests\Support\TestCase;
 
 /**

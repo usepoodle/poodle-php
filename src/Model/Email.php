@@ -79,7 +79,7 @@ class Email
      */
     public function setFrom(string $from): self
     {
-        if (!$this->isValidEmail($from)) {
+        if (! $this->isValidEmail($from)) {
             throw ValidationException::invalidEmail($from, 'from');
         }
 
@@ -101,7 +101,7 @@ class Email
      */
     public function setTo(string $to): self
     {
-        if (!$this->isValidEmail($to)) {
+        if (! $this->isValidEmail($to)) {
             throw ValidationException::invalidEmail($to, 'to');
         }
 

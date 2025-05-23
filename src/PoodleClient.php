@@ -51,7 +51,7 @@ class PoodleClient
             $email = $this->createEmailFromArray($email);
         }
 
-        if (!$email instanceof Email) {
+        if (! $email instanceof Email) {
             throw new \InvalidArgumentException('Email must be an instance of Email or an array');
         }
 
@@ -134,15 +134,15 @@ class PoodleClient
     private function createEmailFromArray(array $data): Email
     {
         // Validate required fields
-        if (!isset($data['from'])) {
+        if (! isset($data['from'])) {
             throw ValidationException::missingField('from');
         }
 
-        if (!isset($data['to'])) {
+        if (! isset($data['to'])) {
             throw ValidationException::missingField('to');
         }
 
-        if (!isset($data['subject'])) {
+        if (! isset($data['subject'])) {
             throw ValidationException::missingField('subject');
         }
 

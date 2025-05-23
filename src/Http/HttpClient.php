@@ -66,7 +66,7 @@ class HttpClient
     public function get(string $endpoint, array $query = []): array
     {
         $options = [];
-        if (!empty($query)) {
+        if (! empty($query)) {
             $options[RequestOptions::QUERY] = $query;
         }
 
@@ -165,6 +165,7 @@ class HttpClient
         // Handle other HTTP errors
         if ($statusCode >= 400) {
             $errorMessage = $this->extractErrorMessage($body, $statusCode);
+
             throw NetworkException::httpError($statusCode, $errorMessage);
         }
 

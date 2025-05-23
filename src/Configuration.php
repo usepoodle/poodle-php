@@ -245,7 +245,7 @@ class Configuration
             throw ValidationException::missingField('baseUrl');
         }
 
-        if (!filter_var($this->baseUrl, FILTER_VALIDATE_URL)) {
+        if (! filter_var($this->baseUrl, FILTER_VALIDATE_URL)) {
             throw ValidationException::invalidFieldValue('baseUrl', $this->baseUrl, 'Must be a valid URL');
         }
 
