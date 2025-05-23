@@ -27,7 +27,7 @@
     "phpunit/phpunit": "^9.5",
     "friendsofphp/php-cs-fixer": "^3.0",
     "phpstan/phpstan": "^1.0",
-    "vimeo/psalm": "^4.0",
+    "vimeo/psalm": "^6.0",
     "squizlabs/php_codesniffer": "^3.6"
   },
   "autoload": {
@@ -43,8 +43,8 @@
   "scripts": {
     "test": "phpunit",
     "test-coverage": "phpunit --coverage-html coverage",
-    "cs-fix": "php-cs-fixer fix",
-    "cs-check": "php-cs-fixer fix --dry-run --diff",
+    "cs-fix": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix",
+    "cs-check": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --dry-run --diff",
     "phpstan": "phpstan analyse",
     "psalm": "psalm"
   },
