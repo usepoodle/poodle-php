@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/packagist/v/usepoodle/poodle-php.svg)](https://packagist.org/packages/usepoodle/poodle-php)
 [![Build Status](https://github.com/usepoodle/poodle-php/workflows/CI/badge.svg)](https://github.com/usepoodle/poodle-php/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/usepoodle/poodle-php/blob/main/LICENSE)
 
 PHP SDK for the Poodle's email sending API.
 
@@ -200,7 +200,7 @@ try {
 }
 ```
 
-For more usage patterns, see the [examples](./examples) directory.
+For more usage patterns, see the [examples](https://github.com/usepoodle/poodle-php/tree/main/examples) directory.
 
 ## API Reference
 
@@ -358,8 +358,8 @@ composer phpstan
 
 ## Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on the process for submitting pull requests and our [Code of Conduct](CODE_OF_CONDUCT.md).
+Contributions are welcome! Please read our [Contributing Guide](https://github.com/usepoodle/poodle-php/blob/main/CONTRIBUTING.md) for details on the process for submitting pull requests and our [Code of Conduct](https://github.com/usepoodle/poodle-php/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/usepoodle/poodle-php/blob/main/LICENSE) file for details.
